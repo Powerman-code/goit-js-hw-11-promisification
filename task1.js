@@ -7,9 +7,9 @@ const delay = ms => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(DELAY);
+            console.log('выполненый промис после n сек')
         }, DELAY)
     });
-
 };
 
 const logger = time => console.log(`Resolved after ${time}ms`);

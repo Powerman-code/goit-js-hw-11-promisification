@@ -10,11 +10,13 @@ const users = [
 ];
 
 const toggleUserState = (allUsers, userName, callback) => {
-  const updatedUsers = allUsers.map(user =>
+  return new Promise((resolve, reject) => {
+    const updatedUsers = allUsers.map(user =>
     user.name === userName ? { ...user, active: !user.active } : user,
-  );
-
-  callback(updatedUsers);
+    );
+    resolve(updatedUsers);
+    reject('nothing to reject');
+  })
 };
 
 const logger = updatedUsers => console.table(updatedUsers);
